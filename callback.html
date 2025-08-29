@@ -8,6 +8,7 @@
   <p id="info"></p>
 
   <script>
+    // Lese die Query-Parameter nach TikTok Login
     const params = new URLSearchParams(window.location.search);
     const code = params.get('code');
     const state = params.get('state');
@@ -16,7 +17,7 @@
     document.getElementById('info').innerText = 
       `Code: ${code}\nState: ${state}\nScopes: ${scopes}`;
 
-    // Später kannst du hier serverseitig den code gegen Access Token tauschen
+    // Später: Code gegen Access Token tauschen
   </script>
 </body>
 </html>
