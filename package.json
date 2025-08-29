@@ -1,0 +1,12 @@
+{
+  "name": "tiktok-auth-api",
+  "version": "1.0.0",
+  "description": "Backend API for TikTok authentication",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "undici": "^6.0.0"
+  }
+}
