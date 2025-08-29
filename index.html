@@ -12,12 +12,17 @@
   </a>
 
   <script>
+    // Sandbox Client Key
     const clientKey = '
-sbaw2un2ksk1ef5gua'; // aus Sandbox
+sbaw2un2ksk1ef5gua';  // TikTok Sandbox Client Key einfügen
+    // Redirect URI genau wie bei TikTok Sandbox angegeben
     const redirectUri = 'https://socialmediamemes1212-maker.github.io/tiktoktest/callback';
-    const state = Math.random().toString(36).substring(2); // CSRF Schutz
+    // CSRF-Schutz
+    const state = Math.random().toString(36).substring(2);
+    // Scope
     const scope = 'user.info.basic';
 
+    // Button Link setzen
     const loginButton = document.getElementById('tiktok-login');
     loginButton.href = `https://www.tiktok.com/v2/auth/authorize/?client_key=${clientKey}&response_type=code&scope=${scope}&redirect_uri=${redirectUri}&state=${state}`;
   </script>
