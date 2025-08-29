@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TikTok Sandbox Test</title>
+  <title>TikTok Sandbox Login Test</title>
 </head>
 <body>
-  <h1>TikTok Login Test</h1>
+  <h1>TikTok Sandbox Login Test</h1>
 
   <!-- TikTok Login Button -->
-  <button id="tiktok-login">Login mit TikTok (Sandbox)</button>
-
-  <!-- Einfaches Formular -->
-  <form action="#" method="post">
-    <input type="text" placeholder="Username" name="username">
-    <input type="submit" value="Senden">
-  </form>
+  <a id="tiktok-login" href="#">
+    Login mit TikTok
+  </a>
 
   <script>
-    document.getElementById("tiktok-login").onclick = function() {
-      alert("Hier startet der TikTok Sandbox Login Flow.");
-      // Später: TikTok OAuth Script einfügen, wenn du API-Credentials hast
-    }
+    const clientKey = '
+sbaw2un2ksk1ef5gua'; // aus Sandbox
+    const redirectUri = 'https://socialmediamemes1212-maker.github.io/tiktoktest/callback';
+    const state = Math.random().toString(36).substring(2); // CSRF Schutz
+    const scope = 'user.info.basic';
+
+    const loginButton = document.getElementById('tiktok-login');
+    loginButton.href = `https://www.tiktok.com/v2/auth/authorize/?client_key=${clientKey}&response_type=code&scope=${scope}&redirect_uri=${redirectUri}&state=${state}`;
   </script>
 </body>
 </html>
