@@ -7,22 +7,20 @@
   <h1>TikTok Sandbox Login Test</h1>
 
   <!-- TikTok Login Button -->
-  <a id="tiktok-login" href="#">
-    Login mit TikTok
-  </a>
+  <a id="tiktok-login" href="#">Login mit TikTok</a>
 
+  <!-- Script ganz am Ende vom Body -->
   <script>
-    // Sandbox Client Key
+    // Sandbox Client Key einfügen
     const clientKey = '
-sbaw2un2ksk1ef5gua';  // TikTok Sandbox Client Key einfügen
-    // Redirect URI genau wie bei TikTok Sandbox angegeben
+sbaw2un2ksk1ef5gua';
+    // Redirect URI exakt wie bei TikTok Sandbox
     const redirectUri = 'https://socialmediamemes1212-maker.github.io/tiktoktest/callback';
-    // CSRF-Schutz
+    // CSRF State
     const state = Math.random().toString(36).substring(2);
     // Scope
     const scope = 'user.info.basic';
 
-    // Button Link setzen
     const loginButton = document.getElementById('tiktok-login');
     loginButton.href = `https://www.tiktok.com/v2/auth/authorize/?client_key=${clientKey}&response_type=code&scope=${scope}&redirect_uri=${redirectUri}&state=${state}`;
   </script>
